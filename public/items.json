@@ -1,0 +1,51 @@
+[
+  {
+    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "name":"Laura",
+    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "price": "1100",
+    "quantity":"40",
+    "supplier":"Ridoy Das"
+  },
+  {
+    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "name":"nude ",
+    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "price": "599",
+    "quantity":"18",
+    "supplier":"MD ifterkar Hossin"
+  },
+  {
+    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "name":"aurora",
+    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "price": "1399",
+    "quantity":"23",
+    "supplier":"Jogobondu Hasan"
+  },
+  {
+    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "name":"dining set",
+    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "price": "1499",
+    "quantity":"17",
+    "supplier":"jhone simth"
+  },
+  {
+    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "name":"seat chair",
+    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "price": "1199",
+    "quantity":"27",
+    "supplier":"Rahul David"
+  },
+  {
+    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "name":"wardrobe",
+    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "price": "1699",
+    "quantity":"14",
+    "supplier":"MD. arif"
+  }
+
+]

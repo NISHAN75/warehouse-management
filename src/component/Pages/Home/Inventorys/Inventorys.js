@@ -5,7 +5,7 @@ import Product from "../Product/Product";
 
 const Inventorys = () => {
   const [products] = useProducts([]);
-  console.log(products);
+ 
 
   return (
     <div className="inventory-area mt-5 mb-5">

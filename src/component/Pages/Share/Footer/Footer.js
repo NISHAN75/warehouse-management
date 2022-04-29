@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="footer-area w-50 mx-auto text-center mt-2">
-      <p>All copy Right</p>
+    <div className="footer-area mt-2 bg-black">
+      <p className='w-50 mx-auto text-center'>All copy Right</p>
     </div>
   );
 };

@@ -12,9 +12,32 @@
 .navbar-light .navbar-brand:hover{
   color: #FFBB00;
 }
-.nav-link {
+.navbar .navbar-nav  .nav-link {
   color: #3A3D45;
   font-size: 18px;
   font-weight: 600;
   margin: 0 10px;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #FFBB00;
+}
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #FFBB00;
+  width: 0%;
+  content: "";
+  height: 4px;
+  transition: all ease-in 5ms;
+  cursor: pointer;
+}
+
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 100%;
 }

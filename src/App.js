@@ -9,6 +9,7 @@ import NotFound from "./component/Pages/NotFound/NotFound";
 import Login from "./component/Pages/Login/Login/Login";
 import Register from "./component/Pages/Login/Register/Register";
 import { ToastContainer } from "react-toastify";
+import ProductDeatils from "./component/Pages/ProductDeatils/ProductDeatils";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
         <Route path="/store" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route
+          path="/inventory/:id"
+          element={<ProductDeatils></ProductDeatils>}
+        ></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>

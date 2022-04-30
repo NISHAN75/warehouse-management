@@ -1,0 +1,24 @@
+
+.card-body {
+  height: 350px;
+}
+.btn-area {
+  position: absolute;
+  bottom: 3%;
+  right: 40%;
+}
+.h-color{
+  color: #3A3D45;
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.n-color {
+  color: #3A3D45;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.d-color{
+  color: #FFBB00;
+}

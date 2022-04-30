@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { Button, Form, Toast } from "react-bootstrap";
+
+import { Button, Form } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
 import Loading from "../../Share/Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [auth]=useAuth();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [
     createUserWithEmailAndPassword,
     user,
@@ -29,7 +28,7 @@ const Register = () => {
 
   }
 
-  const hangleRegister = async event =>{
+  const handleRegister = async event =>{
     event.preventDefault();
     const name=event.target.name.value;
     const email=event.target.email.value;
@@ -43,7 +42,8 @@ const Register = () => {
 
   return (
     <div className="register-area w-50 mx-auto mt-5 mb-5">
-      <Form onSubmit={hangleRegister}>
+      <h2 className="text-center mb-5 text-warning">Please Register</h2>
+      <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" name="name" placeholder="Enter name" />
@@ -76,6 +76,9 @@ const Register = () => {
             Please Login
         </Link>
       </p>
+      <div>
+        <SocialLogin></SocialLogin>
+      </div>
     </div>
   );
 };

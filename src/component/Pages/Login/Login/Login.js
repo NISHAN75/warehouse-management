@@ -6,6 +6,8 @@ import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react
 import Loading from "../../Share/Loading/Loading";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import SocialLogin from "../SocialLogin/SocialLogin";
+
 
 const Login = () => {
   const emailRef = useRef("");
@@ -91,6 +93,10 @@ const Login = () => {
         </Link>
       </p>
       <p>Forget Your password ? <button onClick={handleReset} className="btn">Reset Your Password</button></p>   
+
+      <div>
+        <SocialLogin></SocialLogin>
+      </div>
     </div>
     
   );

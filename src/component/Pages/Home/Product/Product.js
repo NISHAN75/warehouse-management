@@ -21,7 +21,7 @@ const Product = ({ product }) => {
             </Card.Title>
           <Card.Text>
             <p className="d-color">{description}</p>
-            <p><span className="h-color">price</span> : <span className="n-color">{price}</span></p>
+            <p><span className="h-color">price</span> : <span className="n-color">${price}</span></p>
             <p> <span className="h-color">quantity</span>: <span className="n-color">{quantity}</span></p>
             <h5><span className="h-color">Supplier-name</span>:<span className="n-color">{supplier}</span></h5>
           </Card.Text>

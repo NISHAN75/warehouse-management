@@ -1,15 +1,16 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './Product.css'
 
-const Product = ({ product }) => {
+const Product = ({ product}) => {
   const navigate=useNavigate()
   const {_id, name, img,description, price, quantity, supplier } = product;
 
   const navigateProductDeatils = id =>{
     navigate(`/inventory/${id}`)
   }
+
   
   return (
     <Col lg={4} md={6} sm={12}>

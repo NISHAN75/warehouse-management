@@ -21,9 +21,9 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link className="nav-item active" as={Link} to="/home">Home</Nav.Link>
-              <Nav.Link className="nav-item" as={Link} to="/AddItems">AddItems</Nav.Link>
-              <Nav.Link className="nav-item" as={Link} to="/manage">ManageItems</Nav.Link>
-              <Nav.Link className="nav-item" as={Link} to="/contact">Contact</Nav.Link>
+              <Nav.Link className="nav-item" as={Link} to="/addItems">Add Item</Nav.Link>
+              <Nav.Link className="nav-item" as={Link} to="/manage">Manage Items</Nav.Link>
+              <Nav.Link className="nav-item" as={Link} to="/myItems">My items</Nav.Link>
               <Nav.Link className="nav-item" as={Link} to="/store">Store</Nav.Link>
               {
                 user? <button className="l-btn" onClick={logOut}>Logout</button> : <Nav.Link className="nav-item" as={Link} to="/login">Login</Nav.Link>

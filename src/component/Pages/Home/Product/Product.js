@@ -6,6 +6,7 @@ import "./Product.css";
 const Product = ({ product }) => {
   const navigate = useNavigate();
   const { _id, name, img, description, price, quantity, supplier } = product;
+  const totalPrice = parseInt(product.quantity) * parseInt(product.price)
 
   const navigateProductDeatils = (id) => {
     navigate(`/inventory/${id}`);
@@ -29,9 +30,12 @@ const Product = ({ product }) => {
               <span className="n-color">${price}</span>
             </p>
             <p>
-              {" "}
               <span className="h-color">quantity</span>:{" "}
               <span className="n-color">{quantity}</span>
+            </p>
+            <p>
+              <span className="h-color">total</span>:{" "}
+              <span className="n-color">${totalPrice}</span>
             </p>
             <h5>
               <span className="h-color">Supplier-name</span>:

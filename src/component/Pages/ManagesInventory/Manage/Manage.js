@@ -1,31 +1,39 @@
-import { Button } from "bootstrap";
-import React from "react";
-import { Table } from "react-bootstrap";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Manage.css";
 
-const Manage = ({ product,handleDelete }) => {
+const Manage = ({ product, handleDelete }) => {
+  const navigate = useNavigate();
+  const totalPrice = parseInt(product.quantity) * parseInt(product.price);
+  const navigateProductDeatils = (id) => {
+    navigate(`/inventory/${id}`);
+  };
   
+
+
   return (
-    <Table className="mt-5">
-      <thead>
-        <tr>
-          <th>S.No</th>
-          <th>Furniture Name</th>
-          <th>Quantity</th>
-          <th>Delete Inventory</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>{product.name}</td>
-          <td>{product.quantity}</td>
-          <td>
-            <button onClick={()=> handleDelete(product._id)} className="btn l-btn">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </Table>
+    <tr>
+      <td>{product.name}</td>
+      <td>{product?.email}</td>
+      <td>${product.price}</td>
+      <td>{product.quantity}</td>
+      <td>${totalPrice}</td>
+      <td>{product.supplier}</td>
+      <td className="d-flex justify-content-around">
+        <button
+          className="l-btn"
+          onClick={() => navigateProductDeatils(product._id)}
+        >
+          Update Stock
+        </button>
+        <button
+          onClick={() => handleDelete(product._id)}
+          className="btn ml-1 l-btn"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
   );
 };
 

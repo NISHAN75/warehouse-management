@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Link , useNavigate } from 'react-router-dom';
+import { Link , useLocation, useNavigate } from 'react-router-dom';
 import { Button, Form } from "react-bootstrap";
 import useAuth from "../../../../hooks/useAuth";
 import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -22,6 +22,8 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
   const navigate=useNavigate();
+  const location=useLocation();
+  let from =location.state?.from?.pathname || "/";
 
   let errorElement ='';
   
@@ -34,8 +36,7 @@ const Login = () => {
   }
 
   if(user){
-      navigate('/home')
-     
+      navigate(from, {replace: true});
   }
 
 

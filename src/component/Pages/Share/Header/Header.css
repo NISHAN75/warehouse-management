@@ -42,13 +42,15 @@
   width: 100%;
 }
 .l-btn {
-  color: #fff;
+  color: #000;
   border: none;
   background-color: #FFBB00;
   border-radius: 5px;
   padding: 10px 15px;
   font-weight: 600;
+  cursor: pointer;
+  transition: all ease-in 3ms;
 }
 .l-btn:hover{
-  color: #3A3D45;
+  color: #fff;
 }

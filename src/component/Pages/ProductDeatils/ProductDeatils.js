@@ -89,11 +89,8 @@ const deliveredHandle =event =>{
                     {product.quantity}
                   </span>
                 </p>
-                <Button onClick={deliveredHandle}
-                className=" btn btn-one w-50 mx-auto mb-3"
-              >
-                delivered furniture
-              </Button>
+              <button onClick={deliveredHandle}
+                className="l-btn w-50 mx-auto mb-3">delivered furniture</button>
               </div>
             </div>
           </Col>
@@ -108,13 +105,8 @@ const deliveredHandle =event =>{
                     placeholder=" Add Quantity"
                   />
                 </Form.Group>
-                <Button
-                  className="w-50 mx-auto"
-                  variant="primary"
-                  type="submit"
-                >
-                  Add Quantity
-                </Button>
+                <button className="l-btn w-50 mx-auto"
+                  type="submit">Add Quantity</button>
               </Form>
             </div>
           </Col>

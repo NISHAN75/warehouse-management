@@ -13,6 +13,7 @@ import ProductDeatils from "./component/Pages/ProductDeatils/ProductDeatils";
 import RequireAuth from "./component/Pages/Login/RequireAuth/RequireAuth"
 import AddItems from "./component/Pages/AddItems/AddItems";
 import Manages from "./component/Pages/ManagesInventory/Manages/Manages";
+import MyItems from "./component/Pages/MyItems/MyItems";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/AddItems" element={
+        <Route path="/addItems" element={
           <RequireAuth>
             <AddItems></AddItems>
           </RequireAuth>
@@ -32,7 +33,11 @@ function App() {
             <Manages></Manages>
           </RequireAuth>
         }></Route>
-        <Route path="/contact" element={<Home></Home>}></Route>
+        <Route path="/myItems" element={
+          <RequireAuth>
+            <MyItems></MyItems>
+          </RequireAuth>
+        }></Route>
         <Route path="/store" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>

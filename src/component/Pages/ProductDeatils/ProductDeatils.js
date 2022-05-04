@@ -63,16 +63,16 @@ const deliveredHandle =() =>{
                     {product.quantity}
                   </span>
                 </p>
+                <Button onClick={deliveredHandle}
+                className=" btn btn-one w-50 mx-auto mb-3"
+              >
+                delivered furniture
+              </Button>
               </div>
             </div>
           </Col>
           <Col lg={6} md={6} sm={12}>
-            <div className="update-form-area mt-5 text-center">
-              <Button onClick={deliveredHandle}
-                className=" btn btn-one w-50 mx-auto mb-3 mt-5"
-              >
-                delivered furniture
-              </Button>
+            <div className="update-form-area text-center mt-5">
               <Form onSubmit={handleAddQuantity}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control

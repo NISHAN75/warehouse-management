@@ -11,6 +11,7 @@ import Register from "./component/Pages/Login/Register/Register";
 import { ToastContainer } from "react-toastify";
 import ProductDeatils from "./component/Pages/ProductDeatils/ProductDeatils";
 import RequireAuth from "./component/Pages/Login/RequireAuth/RequireAuth"
+import AddItems from "./component/Pages/AddItems/AddItems";
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/items" element={<Home></Home>}></Route>
+        <Route path="/AddItems" element={
+          <RequireAuth>
+            <AddItems></AddItems>
+          </RequireAuth>
+        }></Route>
         <Route path="/about" element={<Home></Home>}></Route>
         <Route path="/contact" element={<Home></Home>}></Route>
         <Route path="/store" element={<Home></Home>}></Route>

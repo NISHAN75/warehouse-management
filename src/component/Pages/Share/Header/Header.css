@@ -41,3 +41,14 @@
 .navbar .navbar-nav .nav-item:hover::after {
   width: 100%;
 }
+.l-btn {
+  color: #fff;
+  border: none;
+  background-color: #FFBB00;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-weight: 600;
+}
+.l-btn:hover{
+  color: #3A3D45;
+}

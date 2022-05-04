@@ -1,29 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import './ProductDeatils.css'
 
 const ProductDeatils = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  const [isReload ,setIsReload] =useState(false);
   useEffect(() => {
     const url = `http://localhost:5000/inventory/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  }, [isReload]);
-
-  const a=product.quantity;
+  }, []);
 
 
-const deliveredHandle =() =>{
-  console.log('click')
+
+const deliveredHandle =event =>{
+  event.preventDefault();
+  const fieldQuantity = parseInt(product.quantity);
+  const  addQuantity=fieldQuantity - 1;
+  const updateQuantity={addQuantity}
+  const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateQuantity),
+    })
+      .then((res) => res.json())
+      .then(data => {
+          const quantity=updateQuantity.addQuantity
+          const newProduct={...product,quantity}
+          setProduct(newProduct);
+      })
+  
+  
 }
 
   const handleAddQuantity = (event) => {
-    const quantity = parseInt(product.quantity);
+    event.preventDefault();
+    const fieldQuantity = parseInt(product.quantity);
     const inputQuantity = parseInt(event.target.number.value);
-    const addQuantity = quantity + inputQuantity;
+    const addQuantity = fieldQuantity + inputQuantity;
     const updateQuantity = { addQuantity };
     const url = `http://localhost:5000/inventory/${id}`;
     fetch(url, {
@@ -34,7 +53,14 @@ const deliveredHandle =() =>{
       body: JSON.stringify(updateQuantity),
     })
       .then((res) => res.json())
-      .then(data => setIsReload(!isReload))
+      .then(data => {
+        if(data.modifiedCount >0){
+          const quantity=updateQuantity.addQuantity
+          const newProduct={...product,quantity}
+          setProduct(newProduct);
+          event.target.reset()
+        }
+      })
   };
 
   return (
@@ -72,7 +98,7 @@ const deliveredHandle =() =>{
             </div>
           </Col>
           <Col lg={6} md={6} sm={12}>
-            <div className="update-form-area text-center mt-5">
+            <div className="update-form-area text-center">
               <Form onSubmit={handleAddQuantity}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control

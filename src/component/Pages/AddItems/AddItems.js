@@ -23,7 +23,7 @@ const AddItems = () => {
     .then(data => {
       console.log('success',data)
       alert('Add A Inventory Successfully')
-      
+      event.target.reset()
     })
   }
 

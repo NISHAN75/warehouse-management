@@ -21,6 +21,7 @@ const Manages = () => {
         if(data.deletedCount > 0){
           const remaining =products.filter(product => product._id !== id);
           setProducts(remaining);
+          
         }
       })
     }

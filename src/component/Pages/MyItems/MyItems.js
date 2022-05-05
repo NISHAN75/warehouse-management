@@ -18,6 +18,23 @@ const MyItems = () => {
     };
     getItems();
   }, []);
+  const handleDelete = (id) => {
+    const agree = window.confirm("Are You sure want to Delete This Inventory");
+    if (agree) {
+      console.log("click", id);
+      const url = `http://localhost:5000/myItems/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remaining = myItems.filter((item) => item._id !== id);
+            setMyItems(remaining);
+          }
+        });
+    }
+  };
   return (
     <Container className="mt-5 mb-3">
       <Table striped bordered hover>
@@ -33,7 +50,7 @@ const MyItems = () => {
         </thead>
         <tbody>
           {
-            myItems.map(item=> <MyItem key={item._id} item={item}></MyItem>)
+            myItems.map(item=> <MyItem key={item._id} handleDelete={handleDelete} item={item}></MyItem>)
           }
         </tbody>
       </Table>

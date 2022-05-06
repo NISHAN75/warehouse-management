@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import NewsDetails from "../NewsDetails/NewsDetails";
-import './News.css'
+import "./News.css";
 
 const News = () => {
   const [informations, setInformation] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/news")
+    fetch("https://tranquil-woodland-74123.herokuapp.com/news")
       .then((res) => res.json())
       .then((data) => setInformation(data));
   }, []);
   return (
-    <div  className="mt-5 mb-5">
+    <div className="mt-5 mb-5">
       <Container>
         <h1 className="text-center mb-5 text-uppercase">From Our News</h1>
         <p className="text-center mt-3 mb-5">

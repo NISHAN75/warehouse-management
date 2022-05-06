@@ -27,7 +27,7 @@ const AddItems = () => {
       supplier,
       img,
     };
-    fetch("http://localhost:5000/inventory", {
+    fetch("https://tranquil-woodland-74123.herokuapp.com/inventory", {
       method: "POST",
       headers: {
         "content-type": "application/json",

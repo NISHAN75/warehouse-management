@@ -1,71 +1,72 @@
 import React, { useRef, useState } from "react";
-import { Link , useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import useAuth from "../../../../hooks/useAuth";
-import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import Loading from "../../Share/Loading/Loading";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import './Login.css'
-
+import "./Login.css";
+import axios from "axios";
 
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
-  const [auth] =useAuth();
-  const [
-    signInWithEmailAndPassword,
-    user,
-    loading,
-    singInError,
-  ] = useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
+  const [auth] = useAuth();
+  const [signInWithEmailAndPassword, user, loading, singInError] =
+    useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
 
-  const navigate=useNavigate();
-  const location=useLocation();
-  let from =location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
-  let errorElement ='';
-  
-  if(singInError ){
+  let errorElement = "";
+
+  if (singInError) {
     errorElement = <p className="text-danger">Error: {singInError?.message}</p>;
-
   }
-  if(loading || sending ){
-    return <Loading></Loading>
-  }
-
-  if(user){
-      navigate(from, {replace: true});
+  if (loading || sending) {
+    return <Loading></Loading>;
   }
 
+  if (user) {
+    // navigate(from, {replace: true});
+  }
 
-  const handleLogin= async event =>{
+  const handleLogin = async (event) => {
     event.preventDefault();
-    const email=emailRef.current.value;
-    const password=passwordRef.current.value;
-    console.log(email,password)
-     await signInWithEmailAndPassword(email,password)
-     
-  }
-  const handleReset = async () =>{
-    console.log('hi')
     const email = emailRef.current.value;
-    console.log('end',email)
+    const password = passwordRef.current.value;
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post(
+      "https://tranquil-woodland-74123.herokuapp.com/login",
+      { email }
+    );
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
+  };
+  const handleReset = async () => {
+    console.log("hi");
+    const email = emailRef.current.value;
+    console.log("end", email);
     if (email) {
       await sendPasswordResetEmail(email);
       toast("Sent email");
     } else {
       toast("please enter your email address");
     }
-  }
-
+  };
 
   return (
     <div className="login-area w-50 mx-auto mt-5 mb-5">
-      <h2 className="text-center mb-5 text-warning" >Please Login</h2>
+      <h2 className="text-center mb-5 text-warning">Please Login</h2>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -77,9 +78,13 @@ const Login = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" ref={passwordRef} placeholder="Password" />
+          <Form.Control
+            type="password"
+            ref={passwordRef}
+            placeholder="Password"
+          />
         </Form.Group>
-         {errorElement}
+        {errorElement}
         <div className="text-center">
           <button className="l-btn w-50 mb-3" type="submit">
             Login
@@ -87,18 +92,25 @@ const Login = () => {
         </div>
       </Form>
       <p className="register-link">
-        Create a New Account ? 
-        <FaLongArrowAltRight/>
-        <Link to="/register"
-          ><button className=" r-btn pe-auto text-decoration-none">Please Register</button></Link>
+        Create a New Account ?
+        <FaLongArrowAltRight />
+        <Link to="/register">
+          <button className=" r-btn pe-auto text-decoration-none">
+            Please Register
+          </button>
+        </Link>
       </p>
-      <p className="forget-link">Forget Your password ? <FaLongArrowAltRight/> <button onClick={handleReset} className="r-btn">Reset Your Password</button></p>   
+      <p className="forget-link">
+        Forget Your password ? <FaLongArrowAltRight />{" "}
+        <button onClick={handleReset} className="r-btn">
+          Reset Your Password
+        </button>
+      </p>
 
       <div>
         <SocialLogin></SocialLogin>
       </div>
     </div>
-    
   );
 };
 

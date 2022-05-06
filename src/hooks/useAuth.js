@@ -9,12 +9,12 @@ const useAuth =()=>{
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDoL28eu4qeyhdi7tm1f0_bt42MOy-AG8E",
-  authDomain: "furniture-web-8900a.firebaseapp.com",
-  projectId: "furniture-web-8900a",
-  storageBucket: "furniture-web-8900a.appspot.com",
-  messagingSenderId: "921111719531",
-  appId: "1:921111719531:web:3fd157a1a069f7911dcb2e"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

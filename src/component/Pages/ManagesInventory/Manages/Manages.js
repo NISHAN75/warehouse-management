@@ -8,7 +8,7 @@ import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 const Manages = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://tranquil-woodland-74123.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -16,7 +16,7 @@ const Manages = () => {
     const agree = window.confirm("Are You sure want to Delete This Inventory");
     if (agree) {
       console.log("click", id);
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://tranquil-woodland-74123.herokuapp.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -32,27 +32,27 @@ const Manages = () => {
   return (
     <div className="manage-area mt-5">
       <Container>
-          <Table className="text-center">
-            <Thead>
-              <Tr>
-                <Th>Furniture</Th>
-                <Th>Email Address</Th>
-                <Th>Price</Th>
-                <Th>Quantity</Th>
-                <Th>Total</Th>
-                <Th>Supplier</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {products.map((product) => (
-                <Manage
-                  key={product._id}
-                  handleDelete={handleDelete}
-                  product={product}
-                ></Manage>
-              ))}
-            </Tbody>
-          </Table>
+        <Table className="text-center">
+          <Thead>
+            <Tr>
+              <Th>Furniture</Th>
+              <Th>Email Address</Th>
+              <Th>Price</Th>
+              <Th>Quantity</Th>
+              <Th>Total</Th>
+              <Th>Supplier</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {products.map((product) => (
+              <Manage
+                key={product._id}
+                handleDelete={handleDelete}
+                product={product}
+              ></Manage>
+            ))}
+          </Tbody>
+        </Table>
         <div className="add-btn w-50 mx-auto mt-5 mb-3 text-center">
           <Link to="/addItems">
             <button className="l-btn">add new item</button>

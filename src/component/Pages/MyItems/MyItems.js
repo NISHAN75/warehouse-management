@@ -6,26 +6,42 @@ import { Container } from "react-bootstrap";
 import MyItem from "../MyItem/MyItem";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { signOut } from "firebase/auth";
+import axiosPrivate from "../../../api/axiosPrivate";
 
 const MyItems = () => {
   const [auth] = useAuth();
   const [user] = useAuthState(auth);
   const [myItems, setMyItems] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const getItems = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/myItems?email=${email}`;
-      const { data } = await axios.get(url);
-      setMyItems(data);
+      const url = `https://tranquil-woodland-74123.herokuapp.com/myItems?email=${email}`;
+      try {
+        const { data } = await axiosPrivate.get(url, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        });
+        setMyItems(data);
+      } catch (error) {
+        toast(error.message);
+        if (error.response.status === 401 || error.response.status === 403) {
+          signOut(auth);
+          navigate("/login");
+        }
+      }
     };
     getItems();
-  }, []);
+  }, [user]);
   const handleDelete = (id) => {
     const agree = window.confirm("Are You sure want to Delete This Inventory");
     if (agree) {
       console.log("click", id);
-      const url = `http://localhost:5000/myItems/${id}`;
+      const url = `https://tranquil-woodland-74123.herokuapp.com/myItems/${id}`;
       fetch(url, {
         method: "DELETE",
       })

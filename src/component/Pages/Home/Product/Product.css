@@ -1,4 +1,4 @@
-.p-card.card {
+.p-card {
   height: 650px;
 }
 .card-body {
@@ -27,4 +27,10 @@ img.card-img-top {
 .d-color{
   color: #3A3D45;
   font-weight: 500;
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 320px) {
+  .p-card {
+    height: 700px;
+  }
 }

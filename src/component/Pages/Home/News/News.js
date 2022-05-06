@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import NewsDetails from "../NewsDetails/NewsDetails";
+import './News.css'
 
 const News = () => {
   const [informations, setInformation] = useState([]);
@@ -12,7 +13,7 @@ const News = () => {
   return (
     <div  className="mt-5 mb-5">
       <Container>
-        <h1 className="text-center mt-5 ">From Our News</h1>
+        <h1 className="text-center mb-5 text-uppercase">From Our News</h1>
         <p className="text-center mt-3 mb-5">
           Read about the latest modern furniture design notes on the furnob
           blog.

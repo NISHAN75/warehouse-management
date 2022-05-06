@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuthState } from "react-firebase-hooks/auth";
 import useAuth from "../../../hooks/useAuth";
-import { Container, Table } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import MyItem from "../MyItem/MyItem";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import { Link } from "react-router-dom";
 
 const MyItems = () => {
   const [auth] = useAuth();
@@ -36,26 +39,36 @@ const MyItems = () => {
     }
   };
   return (
-    <Container className="mt-5 mb-3">
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Furniture Name</th>
-            <th>Email Address</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>total</th>
-            <th>Supplier Name</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            myItems.map(item=> <MyItem key={item._id} handleDelete={handleDelete} item={item}></MyItem>)
-          }
-        </tbody>
-      </Table>
-    </Container>
+    <div className="items-area mt-5">
+      <Container>
+        <Table className="text-center">
+          <Thead>
+            <Tr>
+              <Th>Furniture</Th>
+              <Th>Email Address</Th>
+              <Th>Price</Th>
+              <Th>Quantity</Th>
+              <Th>Total</Th>
+              <Th>Supplier</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {myItems.map((item) => (
+              <MyItem
+                key={item._id}
+                handleDelete={handleDelete}
+                item={item}
+              ></MyItem>
+            ))}
+          </Tbody>
+        </Table>
+        <div className="add-btn w-50 mx-auto mt-5 mb-3 text-center">
+          <Link to="/addItems">
+            <button className="l-btn">add new item</button>
+          </Link>
+        </div>
+      </Container>
+    </div>
   );
 };
 

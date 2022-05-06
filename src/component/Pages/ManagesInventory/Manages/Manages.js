@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Manage from "../Manage/Manage";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const Manages = () => {
   const [products, setProducts] = useState([]);
@@ -28,38 +30,36 @@ const Manages = () => {
     }
   };
   return (
-    <Container>
-      <div className="manage-area">
-        <Table className="mt-5">
-          <thead>
-            <tr>
-            <th>Furniture Name</th>
-              <th>Email Address</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-              <th>Supplier Name</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <Manage
-                key={product._id}
-                handleDelete={handleDelete}
-                product={product}
-              ></Manage>
-            ))}
-          </tbody>
-        </Table>
-
+    <div className="manage-area mt-5">
+      <Container>
+          <Table className="text-center">
+            <Thead>
+              <Tr>
+                <Th>Furniture</Th>
+                <Th>Email Address</Th>
+                <Th>Price</Th>
+                <Th>Quantity</Th>
+                <Th>Total</Th>
+                <Th>Supplier</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {products.map((product) => (
+                <Manage
+                  key={product._id}
+                  handleDelete={handleDelete}
+                  product={product}
+                ></Manage>
+              ))}
+            </Tbody>
+          </Table>
         <div className="add-btn w-50 mx-auto mt-5 mb-3 text-center">
           <Link to="/addItems">
             <button className="l-btn">add new item</button>
           </Link>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

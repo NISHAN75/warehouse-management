@@ -1,6 +1,8 @@
-import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import "./Manage.css";
+import { Tr, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const Manage = ({ product, handleDelete }) => {
   const navigate = useNavigate();
@@ -9,31 +11,32 @@ const Manage = ({ product, handleDelete }) => {
     navigate(`/inventory/${id}`);
   };
   
-
-
   return (
-    <tr>
-      <td>{product.name}</td>
-      <td>{product?.email}</td>
-      <td>${product.price}</td>
-      <td>{product.quantity}</td>
-      <td>${totalPrice}</td>
-      <td>{product.supplier}</td>
-      <td className="d-flex justify-content-around">
+    <Tr>
+      <Td className="mt-5">{product.name}</Td>
+      <Td className="mt-5">{product?.email}</Td>
+      <Td className="mt-5">${product.price}</Td>
+      <Td className="mt-5">{product.quantity}</Td>
+      <Td className="mt-5">${totalPrice}</Td>
+      <Td className="mt-5">{product.supplier}</Td>
+     
+        <Td>
         <button
-          className="l-btn"
+          className="u-btn l-btn"
           onClick={() => navigateManageItems(product._id)}
         >
-          Update Stock
+          Update
         </button>
         <button
           onClick={() => handleDelete(product._id)}
-          className="btn ml-1 l-btn"
+          className="l-btn"
         >
           Delete
         </button>
-      </td>
-    </tr>
+        </Td>
+    </Tr>
+    
+
   );
 };
 

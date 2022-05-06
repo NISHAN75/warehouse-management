@@ -24,3 +24,76 @@
   background-color: #FFBB00;
   color: #fff;
 }
+
+/* responsive */
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+
+
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+    
+}
+/* Tablet & Mobile Layout: 991px. Only for desktop and tablet */
+@media only screen and (min-width: 991px) {
+    
+}
+@media only screen and (max-width: 767px) {
+  .carousel-caption h1 {
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+}
+.carousel-caption p {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  margin-top: 10px;
+}
+.btn.btn-one {
+  margin-top: 0;
+  font-size: 18px;
+  background-color: #fff;
+  color: #000;
+  font-weight: 500;
+}
+    
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (max-width: 480px) { 
+  .carousel-item .carousel-caption {
+    top: 12%;
+}
+.carousel-caption h1 {
+  font-size: 20px;
+}
+.carousel-caption p {
+  font-size: 14px;
+  margin-top: -5px;
+}
+.btn.btn-one {
+  margin-top: 0;
+  font-size: 16px;
+
+}
+
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 350px) {
+  .carousel-item .carousel-caption {
+    top: 14%;
+}
+  .carousel-caption h1 {
+    font-size: 20px;
+}
+.carousel-caption p {
+  font-size: 12px;
+  margin-top: 0;
+}
+.btn.btn-one {
+  margin-top: -14px;
+  font-size: 8px;
+}
+
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Tr, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const MyItem = ({item , handleDelete}) => {
   const navigate=useNavigate()
@@ -10,28 +12,29 @@ const MyItem = ({item , handleDelete}) => {
   
   const totalPrice = parseInt(item.quantity) * parseInt(item.price);
   return (
-   <tr>
-     <td>{item.name}</td>
-     <td>{item?.email}</td>
-     <td>${item?.price}</td>
-     <td>{item?.quantity}</td>
-     <td>${totalPrice}</td>
-     <td>{item?.supplier}</td>
-     <td className="d-flex justify-content-around">
-        <button
-          className="l-btn"
-          onClick={() => navigateMyItems(item._id)}
-        >
-          Update Stock
-        </button>
-        <button
-          onClick={() => handleDelete(item._id)}
-          className="btn ml-1 l-btn"
-        >
-          Delete
-        </button>
-      </td>
-   </tr>
+    <Tr>
+    <Td className="mt-5">{item.name}</Td>
+    <Td className="mt-5">{item?.email}</Td>
+    <Td className="mt-5">${item.price}</Td>
+    <Td className="mt-5">{item.quantity}</Td>
+    <Td className="mt-5">${totalPrice}</Td>
+    <Td className="mt-5">{item.supplier}</Td>
+   
+      <Td>
+      <button
+        className="u-btn l-btn"
+        onClick={() => navigateMyItems(item._id)}
+      >
+        Update
+      </button>
+      <button
+        onClick={() => handleDelete(item._id)}
+        className="l-btn"
+      >
+        Delete
+      </button>
+      </Td>
+  </Tr>
   );
 };
 

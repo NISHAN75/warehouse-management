@@ -1,0 +1,17 @@
+.register-link , .forget-link ,.login-link {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+}
+svg {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.r-btn {
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+}

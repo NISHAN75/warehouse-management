@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
 import Loading from "../../Share/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Register = () => {
   const [auth]=useAuth();
@@ -16,9 +17,10 @@ const Register = () => {
   ] = useCreateUserWithEmailAndPassword(auth);
   const [sendEmailVerification, sending, VerifyError] = useSendEmailVerification(auth);
   const navigate=useNavigate();
+  let errorElement ='';
   
   if(registerError || VerifyError){
-    return <p>Error:{registerError?.message} {VerifyError?.message}</p>
+    errorElement= <p>Error:{registerError?.message} {VerifyError?.message}</p>
   }
   if(loading || sending){
     return <Loading></Loading>
@@ -46,11 +48,11 @@ const Register = () => {
       <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="text" name="name" placeholder="Enter name" />
+          <Form.Control required type="text" name="name" placeholder="Enter name"  />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" name="email" placeholder="Enter email" />
+          <Form.Control required type="email" name="email" placeholder="Enter email" />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -58,22 +60,21 @@ const Register = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" name="password" placeholder="Password" />
+          <Form.Control required type="password" name="password" placeholder="Password" />
         </Form.Group>
+        {
+          errorElement
+        }
         <div className="text-center">
-        <Button className="btn w-50 mb-3" variant="primary" type="submit">
-          Submit
-        </Button>
+        <button className="l-btn w-50 mb-3"  type="submit">Submit</button>
         </div>
       </Form>
 
-      <p className="text-warning">
+      <p className="login-link">
         You Have Already Account?
-        <Link
-          to="/login"
-          className="text-primary pe-auto text-decoration-none mr-2"
-        >
-            Please Login
+        <FaLongArrowAltRight/>
+        <Link to="/login">
+            <button className="r-btn pe-auto text-decoration-none">Please Login</button>
         </Link>
       </p>
       <div>

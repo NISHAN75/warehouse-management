@@ -13,9 +13,9 @@ const MyItem = ({item , handleDelete}) => {
    <tr>
      <td>{item.name}</td>
      <td>{item?.email}</td>
-     <td>{item?.price}</td>
+     <td>${item?.price}</td>
      <td>{item?.quantity}</td>
-     <td>{totalPrice}</td>
+     <td>${totalPrice}</td>
      <td>{item?.supplier}</td>
      <td className="d-flex justify-content-around">
         <button

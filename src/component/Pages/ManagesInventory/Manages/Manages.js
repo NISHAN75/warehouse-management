@@ -39,6 +39,7 @@ const Manages = () => {
               <th>Quantity</th>
               <th>Total</th>
               <th>Supplier Name</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>

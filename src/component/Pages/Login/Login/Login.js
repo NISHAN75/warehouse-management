@@ -7,6 +7,8 @@ import Loading from "../../Share/Loading/Loading";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import './Login.css'
 
 
 const Login = () => {
@@ -79,21 +81,18 @@ const Login = () => {
         </Form.Group>
          {errorElement}
         <div className="text-center">
-          <Button className="btn w-50 mb-3" variant="primary" type="submit">
-          Login
-        </Button>
+          <button className="l-btn w-50 mb-3" type="submit">
+            Login
+          </button>
         </div>
       </Form>
-      <p className="text-warning">
-        Create a New Account
-        <Link
-          to="/register"
-          className="text-primary pe-auto text-decoration-none mr-2"
-        >
-            Please Register
-        </Link>
+      <p className="register-link">
+        Create a New Account ? 
+        <FaLongArrowAltRight/>
+        <Link to="/register"
+          ><button className=" r-btn pe-auto text-decoration-none">Please Register</button></Link>
       </p>
-      <p>Forget Your password ? <button onClick={handleReset} className="btn">Reset Your Password</button></p>   
+      <p className="forget-link">Forget Your password ? <FaLongArrowAltRight/> <button onClick={handleReset} className="r-btn">Reset Your Password</button></p>   
 
       <div>
         <SocialLogin></SocialLogin>

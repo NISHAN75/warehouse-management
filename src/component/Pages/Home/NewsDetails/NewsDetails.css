@@ -1,0 +1,10 @@
+
+.news-card {
+  height: 520px;
+}
+
+.news-btn {
+  position: absolute;
+  bottom: 3%;
+  right: 40%;
+}

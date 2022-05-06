@@ -12,6 +12,7 @@ const ProductDeatils = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
+  const totalPrice = parseInt(product.quantity) * parseInt(product.price)
 
 
 
@@ -87,6 +88,12 @@ const deliveredHandle =event =>{
                   <span className="h-color">quantity</span>:{" "}
                   <span id="quantity" className="n-color">
                     {product.quantity}
+                  </span>
+                </p>
+                <p>
+                  <span className="h-color">quantity</span>:{" "}
+                  <span id="quantity" className="n-color">
+                    ${totalPrice}
                   </span>
                 </p>
               <button onClick={deliveredHandle}

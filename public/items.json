@@ -8,41 +8,41 @@
     "supplier":"Ridoy Das"
   },
   {
-    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "img":"https://img.freepik.com/free-photo/green-interior-modern-interior-living-room-style-with-soft-sofa-green-wall-3d-rendering_41470-3902.jpg?w=740&t=st=1651746055~exp=1651746655~hmac=a4766918ec45e0c432d008506e322ae873dd9e55c1cee871b8a0dbc8a202176c",
     "name":"nude",
-    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "description":"Every piece we make is unique and has a story to tell. A home grows with each piece we make.",
     "price": "599",
     "quantity":"18",
-    "supplier":"MD ifterkar Hossin"
+    "supplier":"MD.iftekar"
   },
   {
-    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "img":"https://img.freepik.com/free-photo/brown-sofa-wooden-table-living-room-interior-with-plant-concrete-wall_41470-3721.jpg?w=740&t=st=1651746188~exp=1651746788~hmac=f71f0462ca50706171e15a54b6c06dba49f6feabaf7aae45e0cfb26649aefc9e",
     "name":"aurora",
-    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "description":"When you take your first steps into your new life, no place feels more like home than the one you build together.",
     "price": "1399",
     "quantity":"23",
-    "supplier":"Jogobondu Hasan"
+    "supplier":"Mr.Salman"
   },
   {
-    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "img":"https://img.freepik.com/free-psd/minimal-living-room-with-blue-sofa-carpet-interior-design-ideas_176382-1525.jpg?t=st=1651745922~exp=1651746522~hmac=2299e0f0455409df5e3bfd91500adb08ad067ef2d09604598adfd846abc8bf4a&w=900",
     "name":"dining set",
-    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "description":"When your building plans are interrupted by a cloudy day, bring the tools out to the patio.",
     "price": "1499",
     "quantity":"17",
-    "supplier":"jhone simth"
+    "supplier":"Rahul Dey"
   },
   {
-    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "name":"seat chair",
-    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "img":"https://img.freepik.com/free-photo/living-room-interior-wall-mockup-warm-tones-with-pink-armchair-minimal-design-3d-rendering_41470-4171.jpg?t=st=1651711642~exp=1651712242~hmac=7a346d08fff66be6d4e483f54a57f84a28ae7fab93e876ad60622f47a01d658c&w=740",
+    "name":"chair",
+    "description":"You don’t always need an expert to help you achieve the look you want. We’ve got all you need to Do It Yourself.",
     "price": "1199",
     "quantity":"27",
     "supplier":"Rahul David"
   },
   {
-    "img":"https://images.pexels.com/photos/6527033/pexels-photo-6527033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "name":"wardrobe",
-    "description":"Design is not just what it looks like and feels like. Design is how it works",
+    "img":"https://img.freepik.com/free-photo/cabinets-wall-tv-living-room_41470-1525.jpg?w=900",
+    "name":"cellarette",
+    "description":"Lots of nail holes are the only marks that will cover up these heavy furniture pieces lifted by yellow straps.",
     "price": "1699",
     "quantity":"14",
     "supplier":"MD. arif"

@@ -14,6 +14,7 @@ import RequireAuth from "./component/Pages/Login/RequireAuth/RequireAuth"
 import AddItems from "./component/Pages/AddItems/AddItems";
 import Manages from "./component/Pages/ManagesInventory/Manages/Manages";
 import MyItems from "./component/Pages/MyItems/MyItems";
+import Blogs from "./component/Pages/Blogs/Blogs";
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
             <MyItems></MyItems>
           </RequireAuth>
         }></Route>
-        <Route path="/store" element={<Home></Home>}></Route>
+        <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route

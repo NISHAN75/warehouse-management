@@ -24,9 +24,9 @@ const SocialLogin = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div>
+    <div className="mx-auto text-center">
       {errorElement}
-      <Button onClick={() => signInWithGoogle()}>Sing in Google</Button>
+      <button className="l-btn w-100" onClick={() => signInWithGoogle()}>Sign in Google</button>
     </div>
   );
 };

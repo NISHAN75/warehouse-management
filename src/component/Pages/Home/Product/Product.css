@@ -1,6 +1,11 @@
-
+.p-card.card {
+  height: 650px;
+}
 .card-body {
   height: 350px;
+}
+img.card-img-top {
+  height: 250px;
 }
 .btn-area {
   position: absolute;
@@ -10,11 +15,12 @@
 .h-color{
   color: #3A3D45;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 10px;
 }
 .n-color {
   color: #3A3D45;
+  font-size: 18px;
   font-weight: 500;
   margin-left: 10px;
 }

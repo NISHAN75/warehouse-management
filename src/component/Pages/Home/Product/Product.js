@@ -14,14 +14,12 @@ const Product = ({ product }) => {
 
   return (
     <Col lg={4} md={6} sm={12}>
-      <Card>
+      <Card className="p-card shadow-lg">
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>
-            <h5>
               <span className="h-color">name</span>:
               <span className="n-color">{name}</span>
-            </h5>
           </Card.Title>
           <Card.Text>
             <p className="d-color">{description}</p>
@@ -37,13 +35,13 @@ const Product = ({ product }) => {
               <span className="h-color">total</span>:{" "}
               <span className="n-color">${totalPrice}</span>
             </p>
-            <h5>
+            <p>
               <span className="h-color">Supplier-name</span>:
               <span className="n-color">{supplier}</span>
-            </h5>
+            </p>
           </Card.Text>
           <div className="btn-area">
-            <button className="l-btn" onClick={() => navigateProductDeatils(_id)}>Update</button>
+            <button className="l-btn " onClick={() => navigateProductDeatils(_id)}>Update</button>
           </div>
         </Card.Body>
       </Card>

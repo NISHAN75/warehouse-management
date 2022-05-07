@@ -6,6 +6,7 @@ import useAuth from "../../../../hooks/useAuth";
 import Loading from "../../Share/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import useToken from "../../../../hooks/useToken";
 
 const Register = () => {
   const [auth]=useAuth();
@@ -16,6 +17,7 @@ const Register = () => {
     registerError,
   ] = useCreateUserWithEmailAndPassword(auth);
   const [sendEmailVerification, sending, VerifyError] = useSendEmailVerification(auth);
+  const [token]=useToken(user);
   const navigate=useNavigate();
   let errorElement ='';
   
@@ -25,7 +27,7 @@ const Register = () => {
   if(loading || sending){
     return <Loading></Loading>
   }
-  if(user){
+  if(token){
     navigate('/home')
 
   }

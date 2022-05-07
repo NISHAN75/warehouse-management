@@ -13,6 +13,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import "./Login.css";
 import axios from "axios";
+import useToken from "../../../../hooks/useToken";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -20,24 +21,25 @@ const Login = () => {
   const [auth] = useAuth();
   const [signInWithEmailAndPassword, user, loading, singInError] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending, resetError] =
-    useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
+  const [token]=useToken(user)
+
 
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  let form = location.state?.from?.pathname || "/";
 
   let errorElement = "";
 
-  if (singInError) {
-    errorElement = <p className="text-danger">Error: {singInError?.message}</p>;
+  if (singInError || resetError) {
+    errorElement = <p className="text-danger">Error: {singInError?.message} {resetError?.message}</p>;
   }
   if (loading || sending) {
     return <Loading></Loading>;
   }
 
-  if (user) {
-    // navigate(from, {replace: true});
+  if (token) {
+    navigate(form, {replace: true});
   }
 
   const handleLogin = async (event) => {
@@ -45,12 +47,6 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post(
-      "https://tranquil-woodland-74123.herokuapp.com/login",
-      { email }
-    );
-    localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
   };
   const handleReset = async () => {
     console.log("hi");

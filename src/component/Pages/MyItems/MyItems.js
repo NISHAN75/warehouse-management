@@ -57,6 +57,7 @@ const MyItems = () => {
   return (
     <div className="items-area mt-5">
       <Container>
+        <h2 className="text-center mb-5">My Items</h2>
         <Table className="text-center">
           <Thead>
             <Tr>

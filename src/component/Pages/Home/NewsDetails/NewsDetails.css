@@ -1,6 +1,5 @@
-
-.news-card {
-  height: 520px;
+.news-card.shadow-lg.border-none.card {
+  height: 480px;
 }
 
 .news-btn {

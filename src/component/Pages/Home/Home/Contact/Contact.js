@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <div className="contact-area  p-5 mb-5 mt-5">
+    <div className="contact-area mx-auto  p-5 mb-5 mt-5">
       <Container>
         <Row>
           <h2 className="text-center mb-5 text-uppercase">Get in Touch</h2>
@@ -55,9 +55,11 @@ const Contact = () => {
                 style={{ height: "100px" }}
               />
             </FloatingLabel>
-            <button className="l-btn w-100 mx-auto text-center" type="submit">
+            <div className="send-btn mx-auto text-center">
+            <button className="l-btn  w-50" type="submit">
               Send
             </button>
+            </div>
           </Form>
         </Row>
       </Container>

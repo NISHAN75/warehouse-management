@@ -1,11 +1,14 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => {
-  return (
-    <div className="footer-area mt-2 bg-black">
-      <p className='w-50 mx-auto text-center'>All copy Right</p>
-    </div>
-  );
+  const today = new Date();
+    const year = today.getFullYear();
+    return (
+        <footer className='footer-area text-center'>
+            <p><small> COPYRIGHT &copy;  {year}, DESIGNED BY NISHAN DAS </small></p>
+        </footer>
+    );
 };
 
 export default Footer;

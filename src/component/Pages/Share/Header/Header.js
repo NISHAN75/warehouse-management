@@ -5,6 +5,7 @@ import useAuth from "../../../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import './Header.css'
 import {signOut } from 'firebase/auth';
+import { useSpring ,animated } from "react-spring";
 
 const Header = () => {
   const [auth] =useAuth();
@@ -12,8 +13,17 @@ const Header = () => {
   const logOut =() =>{
     signOut(auth);
   }
+  const fade=useSpring({
+   from: {
+      opacity: 0
+   },
+   to : {
+     opacity: 1
+   }
+  });
   return (
-    <div className="header-area">
+
+    <animated.div className="header-area" style={fade}>
       <Navbar className="shadow-lg" expand="lg" sticky="top">
         <Container>
           <Navbar.Brand as={Link} to="/">Amorini Furniture</Navbar.Brand>
@@ -38,7 +48,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    </animated.div>
   );
 };
 

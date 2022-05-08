@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Manage from "../Manage/Manage";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import { FaArrowRight } from "react-icons/fa";
 
 const Manages = () => {
   const [products, setProducts] = useState([]);
@@ -56,7 +57,7 @@ const Manages = () => {
         </Table>
         <div className="add-btn w-50 mx-auto mt-5 mb-3 text-center">
           <Link to="/addItems">
-            <button className="l-btn">add new item</button>
+            <button className="l-btn">add new item <FaArrowRight/></button>
           </Link>
         </div>
       </Container>

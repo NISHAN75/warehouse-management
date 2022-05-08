@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./Manage.css";
 import { Tr, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import { FaTelegramPlane ,FaBan } from "react-icons/fa";
+
 
 const Manage = ({ product, handleDelete }) => {
   const navigate = useNavigate();
@@ -26,12 +28,14 @@ const Manage = ({ product, handleDelete }) => {
           onClick={() => navigateManageItems(product._id)}
         >
           Update
+          <FaTelegramPlane/>
         </button>
         <button
           onClick={() => handleDelete(product._id)}
           className="l-btn"
         >
           Delete
+          <FaBan/>
         </button>
         </Td>
     </Tr>

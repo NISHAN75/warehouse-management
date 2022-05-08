@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./Product.css";
+import { FaTelegramPlane } from "react-icons/fa";
+
 
 const Product = ({ product }) => {
   const navigate = useNavigate();
@@ -41,7 +43,7 @@ const Product = ({ product }) => {
             </p>
           </Card.Text>
           <div className="btn-area">
-            <button className="l-btn " onClick={() => navigateProductDeatils(_id)}>Update</button>
+            <button className="l-btn " onClick={() => navigateProductDeatils(_id)}>Update <FaTelegramPlane/></button>
           </div>
         </Card.Body>
       </Card>

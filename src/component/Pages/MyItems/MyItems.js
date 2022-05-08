@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { signOut } from "firebase/auth";
 import axiosPrivate from "../../../api/axiosPrivate";
+import { FaArrowRight } from "react-icons/fa";
 
 const MyItems = () => {
   const [auth] = useAuth();
@@ -81,7 +82,7 @@ const MyItems = () => {
         </Table>
         <div className="add-btn w-50 mx-auto mt-5 mb-3 text-center">
           <Link to="/addItems">
-            <button className="l-btn">add new item</button>
+            <button className="l-btn">add new item <FaArrowRight/></button>
           </Link>
         </div>
       </Container>

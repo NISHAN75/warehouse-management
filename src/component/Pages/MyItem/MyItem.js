@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Tr, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import { FaTelegramPlane ,FaBan } from "react-icons/fa";
+
 
 const MyItem = ({item , handleDelete}) => {
   const navigate=useNavigate()
@@ -26,12 +28,14 @@ const MyItem = ({item , handleDelete}) => {
         onClick={() => navigateMyItems(item._id)}
       >
         Update
+        <FaTelegramPlane/>
       </button>
       <button
         onClick={() => handleDelete(item._id)}
         className="l-btn"
       >
         Delete
+        <FaBan/>
       </button>
       </Td>
   </Tr>

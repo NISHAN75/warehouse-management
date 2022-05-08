@@ -3,6 +3,7 @@ import { Button, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useProducts from "../../../../hooks/useProducts";
 import Product from "../Product/Product";
+import { FaArrowRight } from "react-icons/fa";
 
 const Inventorys = () => {
   const [products] = useProducts([]);
@@ -20,7 +21,7 @@ const Inventorys = () => {
           ))}
         </Row>
          <div className="m-btn-area w-50 mx-auto text-center mt-5">
-          <Link to="/manage"><button className="l-btn">Manage Inventory</button></Link>
+          <Link to="/manage"><button className="l-btn">Manage Inventory <FaArrowRight/></button></Link>
          </div>
       </Container>
     </div>

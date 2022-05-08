@@ -26,10 +26,10 @@ const Footer = () => {
                 </div>
                 <div className="social-area mt-2" >
                     <h5 className='mb-3'>Fellow Me</h5>
-                    <Link to="#"><span><FaFacebookF/></span></Link>
-                    <Link to="#"><span><FaInstagram/></span></Link>
-                    <Link to="#"><span><FaTwitter/></span></Link>
-                    <Link to="#"><span><FaLinkedinIn/></span></Link>
+                    <a href="https://www.facebook.com/nishan.das.3766"><span><FaFacebookF/></span></a>
+                    <a href="https://www.instagram.com/nishan__das58/"><span><FaInstagram/></span></a>
+                    <a href="https://twitter.com/NishanD79240904"><span><FaTwitter/></span></a>
+                    <a href="https://www.linkedin.com/in/nishan-das-00bb58215/"><span><FaLinkedinIn/></span></a>
                 </div>
             </div>
             <div className="footer-down-info  text-center">

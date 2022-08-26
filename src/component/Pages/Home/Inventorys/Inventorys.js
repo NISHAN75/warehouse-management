@@ -7,6 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Inventorys = () => {
   const [products] = useProducts([]);
+  
  
 
 

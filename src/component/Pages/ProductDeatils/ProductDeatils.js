@@ -87,7 +87,7 @@ const ProductDeatils = () => {
                   </span>
                 </p>
                 <p>
-                  <span className="h-color">quantity</span>:{" "}
+                  <span className="h-color">totalPrice</span>:{" "}
                   <span id="quantity" className="n-color">
                     ${totalPrice}
                   </span>

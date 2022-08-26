@@ -39,7 +39,7 @@ const Register = () => {
     const password=event.target.password.value;
      await createUserWithEmailAndPassword(email,password);
      await sendEmailVerification();
-     alert('Send Email Please Verify Your email')
+     alert('Send Email Please Verify Your email');
   }
 
 
